@@ -31,8 +31,11 @@ jobs:
 
       - name: Checking out the repository
         uses: actions/checkout@v2
+
+      - name: Setting up correct Python version
+        uses: actions/setup-python@v2
         with:
-          submodules: true
+          python-version: 3.8
 
       - name: Installing Python package and testing requirements
         run: |
