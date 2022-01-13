@@ -14,13 +14,20 @@ on:
 
 jobs:
   testing:
-    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+          - windows-2022
+          - macos-11
+
+    runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Greetings from Github Actions
-        shell: python
-        run: |
-          print("Hello World")
+      - name: Greetings from the PowerShell
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: Write-Host "Windows PowerShell here"
 
       - name: Checking out the repository
         uses: actions/checkout@v2
