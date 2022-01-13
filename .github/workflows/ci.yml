@@ -1,0 +1,12 @@
+name: Continuous Integration
+
+on:
+  push:
+
+jobs:
+  helloworld:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Greetings from Github Actions
+        run: echo Hello World
