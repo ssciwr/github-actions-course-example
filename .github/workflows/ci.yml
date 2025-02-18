@@ -14,7 +14,7 @@ on:
 
 jobs:
   testing:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Greetings from Github Actions
@@ -23,12 +23,12 @@ jobs:
           print("Hello World")
 
       - name: Checking out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setting up correct Python version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: "3.13"
 
       - name: Installing Python package and testing requirements
         run: |
