@@ -25,9 +25,10 @@ jobs:
 
     steps:
       - name: Greetings from GitHub Actions
-        shell: python
+        if: runner.os == 'Windows'
+        shell: powershell
         run: |
-          print("Hello World")
+          Write-Host "Windows PowerShell here"
       
       - uses: actions/checkout@v4
 
