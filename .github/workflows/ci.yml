@@ -2,6 +2,8 @@ name: "Testing package"
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   helloworld:
